@@ -1,15 +1,38 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
+<div class="container">
+
+{{!-- heading section --}}
+  <div class="row">
+    <h1>Study App</h1>
   </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
+
+  <div class="row">
+    <h2 id="loginTitle">Sign-in</h2>
   </div>
-  <div>
-    <button type="submit">login</button>
+
+{{!-- login form section --}}
+  <div class="row">
+    <form class="login-form">
+      <div>
+        <label for="email-login">email:</label>
+        <input type="text" id="email-login" />
+      </div>
+      <div>
+        <label for="password-login">password:</label>
+        <input type="password" id="password-login" />
+      </div>
+      <div>
+        <button type="submit">login</button>
+      </div>
+    </form>
   </div>
-</form>
+
+  <div class="row">
+    <h2 id="noAccountYet">Do you not have an account? <span><a href="/sign-up">Sign-Up Here!</a></span></h2>
+  </div>
+
+
+
+</div>
+
 
 <script src="/javascript/login.js"></script>
