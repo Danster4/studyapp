@@ -1,5 +1,4 @@
--- DROP DATABASE
-DROP DATABASE IF EXISTS studyapp_db;
+DROP DATABASE IF EXISTS study_app_db;
 
--- CREATE DATABASE
-CREATE DATABASE studyapp_db;
+CREATE DATABASE study_app_db;
+
