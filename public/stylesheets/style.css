@@ -1,6 +1,14 @@
+body {
+  background-color: rgba(42,50,60,255)
+}
+
+#middle-widget {
+  background-color: rgba(50,60,72,255);
+}
+
 #loginTitle {
-  color: blue;
-  font-size: large;
+  color: white;
+  font-size: 16;
   font-weight: bold;
 }
 
@@ -11,3 +19,15 @@
 #noAccountYet > span {
   color: lightskyblue;
 }
+
+#signup-link {
+  text-decoration: none;
+}
+
+
+/* #main-logo {
+  background-image: url(../images/randomtest.jpeg);
+  background-size: 350px;
+  width: 350px;
+  height: 200px;
+} */
