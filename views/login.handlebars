@@ -4,33 +4,36 @@
   <br />
   <br />
 
-  <div class="container" id="middle-widget">
+  <div class="container col-lg-4 col-md-6 col-12" id="middle-widget">
 
 {{!-- heading section --}}
   <div class="row justify-content-center">
-    <img src="../public/images/eleven-eleven-logo-v2-pixlr.png" alt="eleven eleven company logo">
+    <img src="https://i.postimg.cc/4xcvFKTq/eleven-eleven-logo-v2-pixlr.png" id="logofront" alt="eleven eleven company logo" style="width:425px; height: 250px">
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-lg-4 col-md-6 col-12">
+    <div>
       <p class="d-flex justify-content-center" id="loginTitle">Login</p>
     </div>
   </div>
 
 {{!-- login form section --}}
-  <div class="row login-form justify-content-center">
-    <div class="col-lg-4 col-md-6 col-12">
+  <div class="row login-form d-flex justify-content-center">
+    <div>
       <form class="login-form">
-        <div class="form-group d-flex justify-content-between align-items-center text-white">
+        <div class="d-flex justify-content-between align-items-center text-white">
           <label for="email-login">Email:</label>
-          <input class="d-flex justify-content-center align-items-center" type="text" id="email-login" />
+          <input class="d-flex justify-content-center align-items-center" placeholder="Enter Email" type="text" id="email-login" />
         </div>
-        <div class="form-group d-flex justify-content-between align-items-center text-white">
-          <label for="password-login">Password:</label>
-          <input class="d-flex justify-content-center align-items-center" type="password" id="password-login" />
+        <div class="d-flex justify-content-between align-items-center text-white">
+          <label for="password-login">Password: </label>
+          <input class="d-flex justify-content-center align-items-center" placeholder="Password" type="password" id="password-login" />
         </div>
+
+        <br />
+
         <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" id="loginbtn"class="btn btn-primary">Login</button>
         </div>
       </form>
     </div>

@@ -1,2 +1,2 @@
 const app = express();
-app.use(express.static('views/images'));
+app.use(express.static('images'));

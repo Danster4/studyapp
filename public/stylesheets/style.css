@@ -14,20 +14,26 @@ body {
 
 #noAccountYet {
   color: black;
+  text-decoration: none;
 }
 
 #noAccountYet > span {
   color: lightskyblue;
-}
-
-#signup-link {
   text-decoration: none;
 }
 
+#signup-link,
+.icon-description {
+  text-decoration: none;
+  color: rgba(252,0,255,255);
+}
 
-/* #main-logo {
-  background-image: url(../images/randomtest.jpeg);
-  background-size: 350px;
+#loginbtn {
+  background-color: purple;
+  border-color: black;
+}
+
+/* #logofront {
   width: 350px;
   height: 200px;
 } */
