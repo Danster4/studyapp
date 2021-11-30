@@ -12,6 +12,12 @@ body {
   font-weight: bold;
 }
 
+#signupTitle {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 #noAccountYet {
   color: black;
   text-decoration: none;
@@ -23,17 +29,17 @@ body {
 }
 
 #signup-link,
+#login-link,
+#freepick-link,
+#flaticon-link,
 .icon-description {
   text-decoration: none;
   color: rgba(252,0,255,255);
 }
 
-#loginbtn {
+#loginbtn,
+#signupbtn {
   background-color: purple;
   border-color: black;
 }
 
-/* #logofront {
-  width: 350px;
-  height: 200px;
-} */
