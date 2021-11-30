@@ -15,5 +15,9 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 })
 
+router.get('/contact-us', (req, res) => {
+  res.render('contact-us');
+})
+
 
 module.exports = router;
