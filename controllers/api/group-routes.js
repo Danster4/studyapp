@@ -14,19 +14,13 @@ router.get('/', (req, res) => {
                     'id', 
                     'post_title',
                     'post_body',
-                    'user_id',
-                    'group_id',
                     'created_at'
                 ],
                 include: {
                     model: User,
                     attributes: ['username']
                 }
-            },
-            // {
-            //     model: User,
-            //     attributes: ['username']
-            // }
+            }
         ]
     })
         .then(dbGroupData => res.json(dbGroupData))

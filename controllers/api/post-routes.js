@@ -26,6 +26,34 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/:id', (req, res) => {
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'post_title',
+            'post_body',
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Group,
+                attributes: ['group_name']
+            }
+        ]
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.post('/', (req, res) => {
     Post.create({
         post_title: req.body.post_title,
@@ -48,6 +76,26 @@ router.put('/:id', (req, res) => {
     })
         .then(dbPostData => {
             if(!dbPostData) {
+                res.status(404).json({ message: "No post found with that id."});
+                return;
+            }
+
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPostData => {
+            if (!dbPostData) {
                 res.status(404).json({ message: "No post found with that id."});
                 return;
             }
