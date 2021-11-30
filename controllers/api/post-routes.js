@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbGroupData => res.json(dbGroupData))
+        .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -33,7 +33,27 @@ router.post('/', (req, res) => {
         user_id: req.body.user_id,
         group_id: req.body.group_id
     })
-        .then(dbGroupData => res.json(dbGroupData))
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.put('/:id', (req, res) => {
+    Post.update(req.body, {
+        where: {
+            id: req.params.id,
+        }
+    })
+        .then(dbPostData => {
+            if(!dbPostData) {
+                res.status(404).json({ message: "No post found with that id."});
+                return;
+            }
+
+            res.json(dbPostData);
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
