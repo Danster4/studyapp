@@ -40,7 +40,8 @@ body {
 }
 
 #loginbtn,
-#signupbtn {
+#signupbtn,
+#loginbtnhomepage {
   background-color: purple;
   border-color: black;
 }
