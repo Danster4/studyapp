@@ -1,0 +1,47 @@
+body {
+  background-color: rgba(42,50,60,255)
+}
+
+#middle-widget {
+  background-color: rgba(50,60,72,255);
+}
+
+#loginTitle {
+  color: white;
+  font-size: 16;
+  font-weight: bold;
+}
+
+#signupTitle {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#noAccountYet {
+  color: black;
+  text-decoration: none;
+}
+
+#noAccountYet > span {
+  color: lightskyblue;
+  text-decoration: none;
+}
+
+#signup-link,
+#login-link,
+#freepick-link,
+#flaticon-link,
+#contact-us-link,
+#eleven-info-email-address,
+.icon-description {
+  text-decoration: none;
+  color: rgba(252,0,255,255);
+}
+
+#loginbtn,
+#signupbtn {
+  background-color: purple;
+  border-color: black;
+}
+
