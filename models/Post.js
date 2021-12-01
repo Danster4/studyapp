@@ -28,6 +28,7 @@ Post.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
+            onDelete: 'CASCADE',
             references: {
                 model: 'user',
                 key: 'id'
@@ -35,6 +36,7 @@ Post.init(
         },
         group_id: {
             type: DataTypes.INTEGER,
+            onDelete: 'CASCADE',
             references: {
                 model: "group",
                 id: 'id',

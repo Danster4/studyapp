@@ -7,12 +7,12 @@ User.hasMany(Post, {
 });
 
 Group.hasMany(Post, {
-    foreignKey: 'post_id'
+    foreignKey: 'group_id'
 });
 
-// User.hasMany(Group, {
-//     foreignKey: 'user_id'
-// });
+User.hasMany(Group, {
+    foreignKey: 'user_id'
+});
 
 Post.belongsTo(User, {
     foreignKey: 'user_id'
@@ -22,8 +22,8 @@ Post.belongsTo(Group, {
     foreignKey: 'group_id'
 });
 
-// Group.belongsTo(User, {
-//     foreignKey: 'user_id'
-// });
+Group.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
 module.exports = { User, Post, Group };
