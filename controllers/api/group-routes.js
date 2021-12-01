@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
         ],
         include: [
             {
+                model: User,
+                attributes: ['username']
+            },
+            {
                 model: Post,
                 attributes: [
                     'id', 
@@ -16,10 +20,16 @@ router.get('/', (req, res) => {
                     'post_body',
                     'created_at'
                 ],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                include:[
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Group,
+                        attributes: ['group_name']
+                    }
+                ]
             }
         ]
     })
@@ -32,7 +42,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     Group.create({
-        group_name: req.body.group_name
+        group_name: req.body.group_name,
+        user_id: req.body.user_id
     })
         .then(dbGroupData => res.json(dbGroupData))
         .catch(err => {

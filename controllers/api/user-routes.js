@@ -23,6 +23,10 @@ router.get('/', (req, res) => {
                         attributes: ['group_name']
                     }
                 ]
+            },
+            {
+                model: Group,
+                attributes: ['group_name']
             }
         ]
     })
