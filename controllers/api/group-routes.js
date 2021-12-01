@@ -113,4 +113,22 @@ router.put('/:id', (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res) => {
+    Group.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbGroupData => {
+            if (!dbGroupData) {
+                res.status(404).json({ message: "No group found with this id."});
+                return;
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+})
+
 module.exports = router;
