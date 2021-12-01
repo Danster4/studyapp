@@ -2,11 +2,10 @@ const router = require('express').Router();
 const { User, Post, Group, Comment } = require('../../models');
 
 router.get('/', (req, res) => {
-    Post.findAll({
+    Comment.findAll({
         attributes: [
             'id',
-            'post_title',
-            'post_body',
+            'comment_text',
             'created_at'
         ],
         include: [
@@ -15,20 +14,22 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Group,
-                attributes: ['group_name']
-            },
-            {
-                model: Comment,
-                attributes: ['comment_text', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: Post,
+                attributes: ['post_title', 'post_body', 'created_at'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Group,
+                        attributes: ['group_name']
+                    }
+                ]
             }
         ]
     })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbCommData => res.json(dbCommData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -36,14 +37,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Post.findOne({
+    Comment.findOne({
         where: {
             id: req.params.id
         },
         attributes: [
             'id',
-            'post_title',
-            'post_body',
+            'comment_text',
             'created_at'
         ],
         include: [
@@ -52,25 +52,28 @@ router.get('/:id', (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Group,
-                attributes: ['group_name']
-            },
-            {
-                model: Comment,
-                attributes: ['comment_text', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: Post,
+                attributes: ['post_title', 'post_body', 'created_at'],
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username']
+                    },
+                    {
+                        model: Group,
+                        attributes: ['group_name']
+                    }
+                ]
             }
         ]
     })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: "No post found with this id." });
+        .then(dbCommData => {
+            if(!dbCommData) {
+                res.status(404).json({ message: "No comment found with this id." });
                 return;
             }
-            res.json(dbPostData)
+
+            res.json(dbCommData);
         })
         .catch(err => {
             console.log(err);
@@ -79,13 +82,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Post.create({
-        post_title: req.body.post_title,
-        post_body: req.body.post_body,
+    Comment.create({
+        comment_text: req.body.comment_text,
         user_id: req.body.user_id,
-        group_id: req.body.group_id
+        post_id: req.body.post_id
     })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbCommData => res.json(dbCommData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -93,18 +95,18 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Post.update(req.body, {
+    Comment.update(req.body, {
         where: {
             id: req.params.id,
         }
     })
-        .then(dbPostData => {
-            if(!dbPostData) {
-                res.status(404).json({ message: "No post found with that id."});
+        .then(dbCommData => {
+            if(!dbCommData) {
+                res.status(404).json({ message: "No comment found with that id."});
                 return;
             }
 
-            res.json(dbPostData);
+            res.json(dbCommData);
         })
         .catch(err => {
             console.log(err);
@@ -113,18 +115,18 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Post.destroy({
+    Comment.destroy({
         where: {
             id: req.params.id
         }
     })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: "No post found with that id."});
+        .then(dbCommData => {
+            if (!dbCommData) {
+                res.status(404).json({ message: "No comment found with that id."});
                 return;
             }
 
-            res.json(dbPostData);
+            res.json(dbCommData);
         })
         .catch(err => {
             console.log(err);
