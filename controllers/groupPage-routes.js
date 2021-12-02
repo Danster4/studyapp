@@ -48,27 +48,13 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: "No group found with this id." });
                 return
             }
-            // const posts = dbGroupData.map(post => post.get({ plain: true }));
-            res.render('group');
+            const posts = dbGroupData.get({ plain: true });
+            res.render('group', posts);
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-
-//     User.findAll({
-//         attributes: [
-//             'username'
-//         ]
-//     })
-//         .then(dbUserData => {
-//             const users = dbUserData.map(user => user.get({ plain: true }));
-//             res.render('group', { users });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
 });
 
 module.exports = router;
