@@ -1,5 +1,6 @@
 body {
-  background-color: rgba(42,50,60,255)
+  background-color: rgba(42,50,60,255);
+  padding-bottom: 70px;
 }
 
 #middle-widget {
@@ -51,3 +52,5 @@ body {
   bottom: 0;
   width: 100%;
 }
+
+body { padding-bottom: 70px; }
