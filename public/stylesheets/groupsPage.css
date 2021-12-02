@@ -345,4 +345,9 @@ nav {
     margin-right: 30px;
 }
 
+#logout-group {
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+}
 
