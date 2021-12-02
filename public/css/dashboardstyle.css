@@ -60,13 +60,33 @@ nav {
     display: flex;
     align-items: center;
     padding: 0 15px;
+    border: 2px solid purple;
 }
+
+.search-box2 {
+    background: white;
+    width: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border: 2px solid purple;
+}
+
 
 .search-box i {
     width: 18px;
 }
 
 .search-box input {
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+}
+
+.search-box2 input {
     width: 100%;
     background: transparent;
     padding: 10px;
@@ -103,7 +123,7 @@ nav {
     align-self: flex-start;
 }
 
-.right-sidebar {
+.right-sidebar, .group-links{
     flex-basis: 25%;
     position: sticky;
     top: 70px;
@@ -111,14 +131,15 @@ nav {
     background: #fff;
     padding: 20px;
     border-radius: 4px;
-    color: black
+    color: black;
+    border: 4px solid purple;
 }
 
 .main-content {
     flex-basis: 47%;
 }
 
-.imp-links a, .shortcut-links a {
+.imp-links a, .group-links a {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -137,16 +158,30 @@ nav {
     border-bottom: 1px solid purple;
 }
 
-.shortcut-links a img {
-    width: 40px;
-    border-radius: 4px;
-    margin-right: 15px;
+.group-links p {
+    text-align: center;
 }
 
-.shortcut-links p {
+.group-links h3 {
     margin: 25px 0;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.group-links button {
+    background-color: purple;
     color: white;
-    font-weight: 500;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+}
+
+.group-links button:hover {
+    background: darkviolet;
 }
 
 .sidebar-title {
@@ -240,6 +275,7 @@ nav {
     border-radius: 6px;
     padding: 20px;
     columns: #626262;
+    border: 4px solid purple;
 }
 
 .user-profile {
@@ -265,8 +301,7 @@ nav {
 
 .post-input-container {
     padding-left: 55px;
-    padding-top: 20px;
-}
+    padding-top: 20px;}
 
 .post-input-container textarea {
     width: 100%;
@@ -303,6 +338,8 @@ nav {
     padding: 20px;
     color: #626262;
     margin: 20px 0;
+    border: 4px solid purple;
+
 }
 
 .user-profile span {
