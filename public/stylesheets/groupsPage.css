@@ -345,7 +345,8 @@ nav {
     margin-right: 30px;
 }
 
-#logout-group {
+#logout,
+#dashboard-btn {
     text-decoration: none;
     color: white;
     background-color: purple;
