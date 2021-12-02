@@ -1,0 +1,66 @@
+<div class="container col-sm-12">
+    <a href="/" class="col-sm-6">
+        <img src="https://i.postimg.cc/4xcvFKTq/eleven-eleven-logo-v2-pixlr.png" id="logofront" alt="eleven eleven company logo" style="width:225px; height: 100px">
+    </a>
+
+    <nav class="col-sm-6">
+        <div>notification bell icon</div>
+        <div>message mail iconn</div>
+        
+        <input placeholder="Search" type="text" id="search-bar" />
+        <a href="/dashboard">
+            <div>Profile Picture/link to dashboard</div>
+        </a>
+    </nav>
+</div>
+
+<div>
+    <div>
+        <div class="card">
+            <h2>{{group_name}}</h2>
+            {{#each users as |user|}}
+
+            <div>
+                {{user.username}}
+            </div>
+
+            {{/each}}
+        </div>
+
+        <div>
+            {{#each posts as |post|}}
+
+            <article>
+                <div>
+                    <h4>{{post.post_title}}</h4>
+
+                    <div>
+                        {{post.user.username}} on {{post.created_at}}
+                    </div>
+
+                    <div>
+                        {{post.post_body}}
+                        |
+                        <div>
+                            {{#each comments as |comment|}}
+
+                            <section>
+                                <div>
+                                    {{comment.user.username}} on {{comment.created_at}}
+                                </div>
+                                <div>
+                                    {{comment.comment_text}}
+                                </div>
+                            </section>
+
+                            {{/each}}
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            {{/each}}
+        </div>
+    </div>
+</div>
