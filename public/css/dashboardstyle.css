@@ -338,3 +338,9 @@ nav {
     align-items: center;
     margin-right: 30px;
 }
+
+#logout {
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+}

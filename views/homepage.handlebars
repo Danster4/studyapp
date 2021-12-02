@@ -26,6 +26,11 @@
     <a href="/login">
         <button type="button" id="loginbtnhomepage" class="btn btn-primary btn-lg">Login</button>
     </a>
+  {{#if loggedIn }}
+    <a href="/dashboard">
+        <button type="button" id="loginbtnhomepage" class="btn btn-primary btn-lg">Dashboard</button>
+    </a>
+  {{/if}}
   </div>
 
   <br />
