@@ -345,4 +345,10 @@ nav {
     margin-right: 30px;
 }
 
+#logout,
+#dashboard-btn {
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+}
 
