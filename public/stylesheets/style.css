@@ -208,3 +208,48 @@ nav {
   color: white;
   background-color: purple;
 }
+
+.imp-links a, .group-links a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: white;
+  width: fit-content;
+}
+
+.imp-links a img , .far, .fas, .fab {
+  width: 25px;
+  margin-right: 15px;
+  color: purple;
+}
+
+.imp-links {
+  border-bottom: 1px solid purple;
+}
+
+.group-links p {
+  text-align: center;
+}
+
+.group-links h3 {
+  margin: 25px 0;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+
+.group-links button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+.search-box2 {
+  margin-left: 15px;
+}
