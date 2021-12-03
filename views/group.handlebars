@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" id="body-container">
     <div class="row">
         {{!-- left side  --}}
-        <div class="col-sm-4">
+        <div class="col-sm-4 right-mid-left">
             <h2>{{group_name}}</h2>
 
             <ol>
@@ -10,8 +10,11 @@
                 {{/each}}
             </ol>
         </div>
+
+        <div class="col-sm-2"></div>
+        
         {{!-- MAIN CONTENT  --}}
-        <div class="col-sm-4">
+        <div class="col-sm-6 right-mid-left">
             <ol>
                 {{#each posts as |post|}}
                     <li>
@@ -34,7 +37,7 @@
                 {{/each}}
             </ol>
         </div>
-        {{!-- right side  --}}
+        {{!-- right side 
         <div class="col-sm-4">
             <h2>{{group_name}}</h2>
 
@@ -43,6 +46,6 @@
                 <li>{{group.user.username}}</li>
                 {{/each}}
             </ol>
-        </div>
+        </div> --}}
     </div>
 </div>
