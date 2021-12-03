@@ -66,9 +66,8 @@ body {
 } */
 
 /* CHRIS ENTERING CSS HERE BELOW */
-#body-container {
-  margin: 0;
-  padding: 0;
+#group-name {
+  margin-right: 100px;
 }
 
 .right-mid-left {
@@ -96,6 +95,8 @@ body {
   font-style: italic;
 }
 
+
+/* Pulled the below css from Nick's CSS file. */
 .logo {
   width: 160px;
   margin-right: 45px;
