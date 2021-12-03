@@ -1,17 +1,36 @@
-<div class="container" id="body-container">
+<div class="container-fluid" id="body-container">
     <div class="row">
         {{!-- left side  --}}
-        <div class="col-sm-2 right-mid-left" id="group-name">
+        <div class="col-sm-1 right-mid-left" id="group-name">
             <h2>{{group_name}}</h2>
             <ol>
                 {{!-- {{#each users as |user|}}  do not get rid of this line and the 2 below.
                 This is a backend relations problem. Since there is only one user allowed to 1 group the each helper won't work.--}}
-                <li class="">{{user.username}}</li>
+                <li>{{user.username}}</li>
                 {{!-- {{/each}} --}}
             </ol>
         </div>        
         {{!-- MAIN CONTENT  --}}
         <div class="col-sm-8">
+            <div class="write-post-container right-mid-left">
+                <div class="user-profile">
+                    <img src="images/profilepic2.jpg">
+                    <div>
+                        <p>John Nicholson</p>
+                        <small> Public <i class="fas fa-caret-down"></i></small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="What's on your mind?">
+                    </textarea>
+                    <div class="post-links">
+                        <a href="#"><i class="fas fa-video"></i>Video</a>
+                        <a href="#"><i class="fas fa-image"></i>Photo</a>
+                    </div>
+                </div>
+            </div>
+
             <ol>
                 {{#each posts as |post|}}
                     <li class="right-mid-left">
@@ -35,15 +54,14 @@
                 {{/each}}
             </ol>
         </div>
-        {{!-- right side 
-        <div class="col-sm-4">
-            <h2>{{group_name}}</h2>
-
+        {{!-- right side  --}}
+        <div class="col-sm-1 right-mid-left">
+            <h4>Online</h4>
             <ol>
-                {{#each users as |user|}}
-                <li>{{group.user.username}}</li>
-                {{/each}}
+                {{!-- {{#each users as |user|}} --}}
+                <li>{{user.username}}</li>
+                {{!-- {{/each}} --}}
             </ol>
-        </div> --}}
+        </div>
     </div>
 </div>
