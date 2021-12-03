@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgba(42,50,60,255);
   padding-bottom: 70px;
@@ -62,14 +67,143 @@ body {
 
 /* CHRIS ENTERING CSS HERE BELOW */
 #body-container {
-  /* color: white; */
   margin: 0;
   padding: 0;
 }
 
 .right-mid-left {
-  border-radius: 5px;
+  list-style: none;
+  border-radius: 10px;
   background-color: white;
   color: black;
   border: 4px solid purple;
+}
+
+.comment-border-bottom {
+  border-bottom: 2px groove purple;
+  font-weight: 700;
+}
+
+.post-border-bottom {
+  border-bottom: 2px groove purple;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bolder-name_date {
+  font-weight: 700;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.logo {
+  width: 160px;
+  margin-right: 45px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 3px 2%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 4px solid purple;
+}
+
+.logo {
+  width: 160px;
+  margin-right: 45px;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-left ul li i {
+  width: 20px;
+  margin: 0 15px;
+  color: purple;
+
+}
+
+.nav-user-icon img {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-user-icon {
+  margin-left: 30px;
+}
+
+.search-box {
+  background: white;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border: 2px solid purple;
+}
+
+.search-box2 {
+  background: white;
+  width: 300px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border: 2px solid purple;
+}
+
+
+.search-box i {
+  width: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+}
+
+.search-box2 input {
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #41db51;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#logout {
+  text-decoration: none;
+  color: white;
+  background-color: purple;
 }

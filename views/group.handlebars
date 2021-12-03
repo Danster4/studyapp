@@ -1,39 +1,37 @@
-<div class="container" id="body-container">
+<div class="container-fluid" id="body-container">
     <div class="row">
         {{!-- left side  --}}
-        <div class="col-sm-4 right-mid-left">
+        <div class="col-sm-2 right-mid-left">
             <h2>{{group_name}}</h2>
-
             <ol>
-                {{#each users as |user|}}
-                <li>{{group.user.username}}</li>
-                {{/each}}
+                {{!-- {{#each users as |user|}}  do not get rid of this line and the 2 below.
+                This is a backend relations problem. Since there is only one user allowed to 1 group the each helper won't work.--}}
+                <li class="">{{user.username}}</li>
+                {{!-- {{/each}} --}}
             </ol>
-        </div>
-
-        <div class="col-sm-2"></div>
-        
+        </div>        
         {{!-- MAIN CONTENT  --}}
-        <div class="col-sm-6 right-mid-left">
+        <div class="col-sm-8">
             <ol>
                 {{#each posts as |post|}}
-                    <li>
-                        {{post.post_title}}
-                        <br />
-                        | By {{post.user.username}} on {{post.created_at}}
-                        <ol>
-                            {{#each comments as |comment|}}
-                            <li>
-                                {{comment.user.username}} on {{comment.created_at}}
-                                <br />
-                                {{comment.comment_text}}
-                            </li>
-                            ====================
-                            {{/each}}
-                        </ol>
+                    <li class="right-mid-left">
+                        <article>
+                            <h3>
+                                {{post.post_title}}
+                            </h3>
+                            | By <span class="bolder-name_date">{{post.user.username}}</span> on <span class="bolder-name_date">{{post.created_at}}</span>
+                            <section class="post-border-bottom">{{post.post_body}}</section>
+                            <ol>
+                                {{#each comments as |comment|}}
+                                <li>
+                                    <span class="bolder-name_date">{{comment.user.username}}</span> on <span class="bolder-name_date">{{comment.created_at}}</span>
+                                    {{!-- <br /> --}}
+                                    <section class="comment-border-bottom">{{comment.comment_text}}</section>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </article>
                     </li>
-                    ============================
-
                 {{/each}}
             </ol>
         </div>

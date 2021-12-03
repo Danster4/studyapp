@@ -1,42 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleven Eleven</title>
-    <link rel="stylesheet" href="./stylesheets/dashboardstyle.css">
-    <script src="https://kit.fontawesome.com/86f67a038c.js" crossorigin="anonymous"></script>
-</head>
-<body>
 
-    <nav>
-        <div class="nav-left">
-            <a href="/dashboard">
-                <img src="https://i.postimg.cc/4xcvFKTq/eleven-eleven-logo-v2-pixlr.png" class="logo">
-            </a>
-            <ul>
-                <li><i class="far fa-bell"></i></li>
-                <li><i class="fas fa-envelope"></i></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="nav-user-icon online">
-                <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="/">
-            </div>
-            <br />
-            <button type="submit" id="logout" class="btn">Logout</button>
-        </div>
-    </div>
-</nav>
-
-    <div class="container">
-    {{!------------ left-sidebar -------------}}
-        <div class="left-sidebar">
+<div class="container">
+    <div class="row">
+        {{!------------ left-sidebar -------------}}
+        <div class="left-sidebar col-sm-4">
             <div class="imp-links">
                 <a href="#"><i class="far fa-newspaper"></i> News Feed </a>
                 <a href="#"><i class="fas fa-user-plus"></i> Users </a>
@@ -44,7 +10,7 @@
                 <a href="#"><i class="far fa-clipboard"></i> Notes </a>
                 <a href="#"><i class="fab fa-youtube"></i> Videos </a>
             </div>
-            <div class="group-links">
+            <div class="group-links right-mid-left">
                 <h3>Create a New Group</h3>
                 <p>Group Name:</p>
                 <div class="search-box2">
@@ -55,118 +21,113 @@
                 </button>
             </div>
         </div>
-{{!----------- main content --------------}}
-    <div class="main-content">
+    {{!----------- main content --------------}}
+        <div class="main-content col-sm-4">
 
-        <div class="write-post-container">
-            <div class="user-profile">
-                <img src="images/profilepic2.jpg">
-                <div>
-                    <p>John Nicholson</p>
-                    <small> Public <i class="fas fa-caret-down"></i></small>
+            <div class="write-post-container right-mid-left">
+                <div class="user-profile">
+                    <img src="images/profilepic2.jpg">
+                    <div>
+                        <p>John Nicholson</p>
+                        <small> Public <i class="fas fa-caret-down"></i></small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="What's on your mind?">
+                    </textarea>
+                    <div class="post-links">
+                        <a href="#"><i class="fas fa-video"></i>Video</a>
+                        <a href="#"><i class="fas fa-image"></i>Photo</a>
+                    </div>
                 </div>
             </div>
+            {{#each posts as |post|}}
+            <div class="post-container right-mid-left">
+                <div class="user-profile">
+                    <img src="images/profilepic2.jpg">
+                    <div>
 
-            <div class="post-input-container">
-                <textarea rows="3" placeholder="What's on your mind?">
-                </textarea>
-                <div class="post-links">
-                    <a href="#"><i class="fas fa-video"></i>Video</a>
-                    <a href="#"><i class="fas fa-image"></i>Photo</a>
+                        <h2>{{user.username}}</h2>
+                        <div>on {{created_at}}</div>
+                    </div>
+                </div>
+                <p class="post-text">Here you can see other people's post and vote whether if you think it was helpful or not!</p>
+                <h3>{{post_title}}</h3>
+                <p class="post-text">{{post_body}}</p>
+                
+                <img src="./images/full-stack-developer.jpg" class="post-img">
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><i class="fas fa-thumbs-up"></i>Like</div>
+                        <div><i class="fas fa-thumbs-down"></i>Dislike</div>
+                        <div><i class="fas fa-comments"></i>Comment</div>
+                    </div>
                 </div>
             </div>
+            {{/each}}
         </div>
-        {{#each posts as |post|}}
-        <div class="post-container">
-            <div class="user-profile">
-                <img src="images/profilepic2.jpg">
-                <div>
 
-                    <h2>{{user.username}}</h2>
-                    <div>on {{created_at}}</div>
-                </div>
-            </div>
-            <p class="post-text">Here you can see other people's post and vote whether if you think it was helpful or not!</p>
-            <h3>{{post_title}}</h3>
-            <p class="post-text">{{post_body}}</p>
+    {{!------------ right-sidebar -------------}}
+        <div class="right-sidebar right-mid-left col-sm-4">
             
-            <img src="./images/full-stack-developer.jpg" class="post-img">
-            <div class="post-row">
-                <div class="activity-icons">
-                    <div><i class="fas fa-thumbs-up"></i>Like</div>
-                    <div><i class="fas fa-thumbs-down"></i>Dislike</div>
-                    <div><i class="fas fa-comments"></i>Comment</div>
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href="#">See All</a>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+                <div class="rightt-event">
+                    <h4>Social Media</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
+                    <a href="#">More Info</a>
                 </div>
             </div>
-        </div>
-        {{/each}}
-    </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>June</span>
+                </div>
+                <div class="rightt-event">
+                    <h4>Mobile Marketing</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
 
-{{!------------ right-sidebar -------------}}
-    <div class="right-sidebar">
-        
-        <div class="sidebar-title">
-            <h4>Events</h4>
-            <a href="#">See All</a>
-        </div>
+            <div class="sidebar-title">
+                <h4>Advertisements</h4>
+                <a href="#">Close</a>
+            </div>
+            <img src="./images/study-group.jpg" class="sidebar-ads">
 
-        <div class="event">
-            <div class="left-event">
-                <h3>18</h3>
-                <span>March</span>
+            <div class="sidebar-title">
+                <h4>Conversations</h4>
+                <a href="#">Hide Chat</a>
             </div>
-            <div class="rightt-event">
-                <h4>Social Media</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
-                <a href="#">More Info</a>
-            </div>
-        </div>
-        <div class="event">
-            <div class="left-event">
-                <h3>22</h3>
-                <span>June</span>
-            </div>
-            <div class="rightt-event">
-                <h4>Mobile Marketing</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
-                <a href="#">More Info</a>
-            </div>
-        </div>
 
-        <div class="sidebar-title">
-            <h4>Advertisements</h4>
-            <a href="#">Close</a>
-        </div>
-        <img src="./images/study-group.jpg" class="sidebar-ads">
-
-        <div class="sidebar-title">
-            <h4>Conversations</h4>
-            <a href="#">Hide Chat</a>
-        </div>
-
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Alison Mina</p>
             </div>
-            <p>Alison Mina</p>
-        </div>
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Jackson Aston</p>
             </div>
-            <p>Jackson Aston</p>
-        </div>
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Samona Rose</p>
             </div>
-            <p>Samona Rose</p>
         </div>
     </div>
 </div>
-
-</body>
-
-<script src="/javascript/logout.js"></script>
-
-</html>
