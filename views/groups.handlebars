@@ -1,0 +1,38 @@
+<div class="container-fluid" id="body-container">
+    <div class="row">
+        {{!-- left side  --}}
+        <div class="col-sm-2 right-mid-left" id="group-name">
+            <h2>Your Groups</h2>
+            <ol>
+            {{#each groups as |group|}}
+            <li>
+                <h3>{{group_name}}</h3>
+                <h6>{{user.username}}</h6>
+            </li>
+            {{/each}}
+            </ol>
+        </div>        
+        {{!-- MAIN CONTENT  --}}
+        <div class="col-sm-7">
+            <div class="container">
+                <div class="row">
+                    {{#each groups as |group|}}
+                    <div class="right-mid-left col-sm-6">
+                        <h3>{{group_name}}</h3>
+                        <h6>{{user.username}}</h6>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{!-- right side  --}}
+        <div class="col-sm-1 right-mid-left">
+            <h4>Online</h4>
+            <ol>
+                {{!-- {{#each users as |user|}} --}}
+                {{!-- <li>{{user.username}}</li> --}}
+                {{!-- {{/each}} --}}
+            </ol>
+        </div>
+    </div>
+</div>

@@ -36,10 +36,10 @@
                     <li class="right-mid-left">
                         <article>
                             <h3>
-                                {{post.post_title}}
+                                {{post_title}}
                             </h3>
-                            | By <span class="bolder-name_date">{{post.user.username}}</span> on <span class="bolder-name_date">{{post.created_at}}</span>
-                            <section class="post-border-bottom">{{post.post_body}}</section>
+                            | By <span class="bolder-name_date">{{user.username}}</span> on <span class="bolder-name_date">{{post.created_at}}</span>
+                            <section class="post-border-bottom">{{post_body}}</section>
                             <ol>
                                 {{#each comments as |comment|}}
                                 <li>

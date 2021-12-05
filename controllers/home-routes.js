@@ -23,8 +23,4 @@ router.get('/contact-us', (req, res) => {
   res.render('contact-us');
 })
 
-router.get('/group', (req, res) => {
-  res.render('group');
-})
-
 module.exports = router;
