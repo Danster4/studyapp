@@ -1,184 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleven Eleven</title>
-    <link rel="stylesheet" href="./stylesheets/groupsPage.css">
-    <script src="https://kit.fontawesome.com/86f67a038c.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<div class="container">
+    <div class="row">
+        {{!-- left side  --}}
+        <div class="col-sm-4">
+            <h2>{{group_name}}</h2>
 
-    <nav>
-        <div class="nav-left">
-            <a href="/dashboard">
-                <img src="https://i.postimg.cc/4xcvFKTq/eleven-eleven-logo-v2-pixlr.png" class="logo">
-            </a>
-            <a href="/dashboard">
-                <button type="submit" id="dashboard-btn" class="btn btn-primary">Dashboard</button>
-            </a>
-            <ul>
-                <li><i class="far fa-bell"></i></li>
-                <li><i class="fas fa-envelope"></i></li>
-            </ul>
+            <ol>
+                {{#each users as |user|}}
+                <li>{{group.user.username}}</li>
+                {{/each}}
+            </ol>
         </div>
-        <div class="nav-right">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="nav-user-icon online">
-                <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="/">
-            </div>
-            <button type="submit" id="logout" class="btn btn-primary">Logout</button>
-        </div>
-    </nav>
-
-    <div class="container">
-        {{!------------ left-sidebar -------------}}
-        <div class="left-sidebar">
-            <div class="imp-links">
-                <a href="#"><i class="far fa-newspaper"></i> News Feed </a>
-                <a href="#"><i class="fas fa-user-plus"></i> Users </a>
-                <a href="#"><i class="fas fa-users"></i> Groups </a>
-                <a href="#"><i class="far fa-clipboard"></i> Notes </a>
-                <a href="#"><i class="fab fa-youtube"></i> Videos </a>
-            </div>
-            <div class="group-links">
-                <p>Your Groups</p>
-                <a href="#">{{group_name}}</a>
-                <li>{{#each users as |user|}}</li>
-
-                <div>
-                    {{user.username}}
-                </div>
+        {{!-- MAIN CONTENT  --}}
+        <div class="col-sm-4">
+            <ol>
+                {{#each posts as |post|}}
+                    <li>
+                        {{post.post_title}}
+                        <br />
+                        | By {{post.user.username}} on {{post.created_at}}
+                        <ol>
+                            {{#each comments as |comment|}}
+                            <li>
+                                {{comment.user.username}} on {{comment.created_at}}
+                                <br />
+                                {{comment.comment_text}}
+                            </li>
+                            ====================
+                            {{/each}}
+                        </ol>
+                    </li>
+                    ============================
 
                 {{/each}}
-            </div>
+            </ol>
         </div>
+        {{!-- right side  --}}
+        <div class="col-sm-4">
+            <h2>{{group_name}}</h2>
 
-        {{!----------- main content --------------}}
-        <div class="main-content">
-            <div class="write-post-container">
-                {{#each posts as |post|}}
-                <div class="user-profile">
-                    <img src="https://i.postimg.cc/X7SL91N6/profilepic2.jpg">
-                    <div>
-                        <h4>{{post.post_title}}</h4>
-                        <p>{{post.user.username}} on {{post.created_at}}</p>
-                        <small>{{group_name}}<i class="fas fa-caret-down"></i></small>
-                    </div>
-                </div>
-                <div class="post-input-container">
-                    <textarea rows="3" placeholder="What would you like to share to you group?">
-                    </textarea>
-                    <div class="post-links">
-                        <a href="#"><i class="fas fa-video"></i>Video</a>
-                        <a href="#"><i class="fas fa-image"></i>Photo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="https://i.postimg.cc/X7SL91N6/profilepic2.jpg">
-                    <div>
-                        <h4>{{post.post_title}}</h4>
-                        <p>{{post.user.username}} on {{post.created_at}}</p>
-                        <small>{{group_name}}<i class="fas fa-caret-down"></i></small>
-                    </div>
-                </div>
-                <div>
-                    {{post.post_body}}
-                    <div class="activity-icons">
-                        <div><i class="fas fa-thumbs-up"></i>Like</div>
-                        <div><i class="fas fa-thumbs-down"></i>Dislike</div>
-                        <div><i class="fas fa-comments"></i>Comment</div>
-                    </div>
-                    <div>
-                        {{#each comments as |comment|}}
-                        <section>
-                            <div>
-                                {{comment.user.username}} on {{comment.created_at}}
-                            </div>
-                            <div>
-                                {{comment.comment_text}}
-                            </div>
-                        </section>
-
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-
-            {{/each}}
-        </div>
-
-        {{!------------ right-sidebar -------------}}
-        <div class="right-sidebar">
-            
-            <div class="sidebar-title">
-                <h4>Events</h4>
-                <a href="#">See All</a>
-            </div>
-
-            <div class="event">
-                <div class="left-event">
-                    <h3>18</h3>
-                    <span>March</span>
-                </div>
-                <div class="rightt-event">
-                    <h4>MySQL Discussion</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> UCF Coding Bootcamp </p>
-                    <a href="#">More Info</a>
-                </div>
-            </div>
-            <div class="event">
-                <div class="left-event">
-                    <h3>22</h3>
-                    <span>June</span>
-                </div>
-                <div class="rightt-event">
-                    <h4>Node.js Discussion</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> UCF Coding Bootcamp </p>
-                    <a href="#">More Info</a>
-                </div>
-            </div>
-
-            <div class="sidebar-title">
-                <h4>Advertisements</h4>
-                <a href="#">Close</a>
-            </div>
-            <img src="https://i.postimg.cc/0NFDPrb1/study-group.jpg" class="sidebar-ads">
-
-            <div class="sidebar-title">
-                <h4>Conversations</h4>
-                <a href="#">Hide Chat</a>
-            </div>
-
-            <div class="online-list">
-                <div class="online">
-                    <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="">
-                </div>
-                <p>Alison Mina</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="">
-                </div>
-                <p>Jackson Aston</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="">
-                </div>
-                <p>Samona Rose</p>
-            </div>
+            <ol>
+                {{#each users as |user|}}
+                <li>{{group.user.username}}</li>
+                {{/each}}
+            </ol>
         </div>
     </div>
-</body>
-
-<script src="/javascript/logout.js"></script>
-
-</html>
+</div>
