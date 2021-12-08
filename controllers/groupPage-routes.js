@@ -43,23 +43,24 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbGroupData => {
-            if(!dbGroupData) {
-                res.status(404).json({ message: "No group found with this id." });
-                return
-            }
-            const posts = dbGroupData.map(post => post.get({ plain: true }));
-            res.render('group', posts);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(dbGroupData => {
+        // serialize data before passing to template
+        const groups = dbGroupData.map(group => group.get({ plain: true }));
+        res.render('groups', { groups });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
+
 
 
 router.get('/:id', (req, res) => {
     Group.findOne({
+        where: {
+            id: req.params.id
+        },
         attributes: [
             'id',
             'group_name'
@@ -104,8 +105,8 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: "No group found with this id." });
                 return
             }
-            const posts = dbGroupData.get({ plain: true });
-            res.render('group', posts);
+            const group = dbGroupData.get({ plain: true });
+            res.render('single-group', group);
         })
         .catch(err => {
             console.log(err);

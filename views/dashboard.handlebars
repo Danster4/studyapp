@@ -1,87 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleven Eleven</title>
-    <link rel="stylesheet" href="./stylesheets/dashboardstyle.css">
-    <script src="https://kit.fontawesome.com/86f67a038c.js" crossorigin="anonymous"></script>
-</head>
-<body>
 
-    <nav>
-        <div class="nav-left">
-            <a href="/dashboard">
-                <img src="https://i.postimg.cc/4xcvFKTq/eleven-eleven-logo-v2-pixlr.png" class="logo">
-            </a>
-            <ul>
-                <li><i class="far fa-bell"></i></li>
-                <li><i class="fas fa-envelope"></i></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="nav-user-icon online" onclick="settingsMenuToggle()">
-                <img src="./images/profile pic 1.jpeg">
-            </div>
-        </div>
-        {{!------------ Settings Menu -------------}}
-        <div class="settings-menu">
-            <div class="settings-menu-inner">
-                <div class="user-profile">
-                    <img src="images/profilepic2.jpg">
-                    <div>
-                        <p>Erica Fuentes</p>
-                        <a href="#">See your profile</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="user-profile">
-                    <img src="./images/feedback.jpg">
-                    <div>
-                        <p>Give Feedback</p>
-                        <a href="#">Help us improve our website</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="settings-links">
-                    <img src="./images/settings.jfif" class="settings-icon">
-                        <a href="#">Settings & Privacy<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                </div>
-                <div class="settings-links">
-                    <img src="./images/help.png" class="settings-icon">
-                        <a href="#">Help & Support<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                </div>
-                <div class="settings-links">
-                    <img src="./images/display.png" class="settings-icon">
-                        <a href="#">Display & Accessibility<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                </div>
-                <div class="settings-links">
-                    <img src="./images/logout.png" class="settings-icon">
-                        <a href="#">Logout<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                </div>
-            </div>
-            <br />
-            <button type="submit" id="logout" class="btn">Logout</button>
-        </div>
-    </div>
-</nav>
-
-    <div class="container">
-    {{!------------ left-sidebar -------------}}
-        <div class="left-sidebar">
+<div class="container">
+    <div class="row">
+        {{!------------ left-sidebar -------------}}
+        <div class="left-sidebar col-sm-4">
             <div class="imp-links">
-                <a href="#"><i class="far fa-newspaper"></i> News Feed </a>
+                <a href="#"><i class="far fa-newspaper"></i>News Feed</a>
                 <a href="#"><i class="fas fa-user-plus"></i> Users </a>
                 <a href="/group"><i class="fas fa-users"></i> Groups </a>
                 <a href="#"><i class="far fa-clipboard"></i> Notes </a>
                 <a href="#"><i class="fab fa-youtube"></i> Videos </a>
             </div>
-            <div class="group-links">
+            <div class="group-links right-mid-left">
                 <h3>Create a New Group</h3>
                 <p>Group Name:</p>
                 <div class="search-box2">
@@ -92,17 +21,17 @@
                 </button>
             </div>
         </div>
-{{!----------- main content --------------}}
-    <div class="main-content">
+    {{!----------- main content --------------}}
+        <div class="main-content col-sm-4">
 
-        <div class="write-post-container">
-            <div class="user-profile">
-                <img src="images/profilepic2.jpg">
-                <div>
-                    <p>John Nicholson</p>
-                    <small> Public <i class="fas fa-caret-down"></i></small>
+            <div class="write-post-container right-mid-left">
+                <div class="user-profile">
+                    <img src="images/profilepic2.jpg">
+                    <div>
+                        <p>John Nicholson</p>
+                        <small> Public <i class="fas fa-caret-down"></i></small>
+                    </div>
                 </div>
-            </div>
 
                 <div class="post-input-container">
                     <textarea rows="3" placeholder="What would you like to share?"></textarea>
@@ -114,7 +43,7 @@
                 </div>
             </div>
             {{#each posts as |post|}}
-            <div class="post-container">
+            <div class="post-container right-mid-left">
                 <div class="post-row">
                     <div class="user-profile">
                         <img src="images/profilepic2.jpg">
@@ -148,64 +77,73 @@
     </div>
 
 {{!------------ right-sidebar -------------}}
-    <div class="right-sidebar">
+    {{!-- <div class="right-sidebar">
         
         <div class="sidebar-title">
             <h4>Events</h4>
             <a href="#">See All</a>
-        </div>
+        </div> --}}
 
-        <div class="event">
-            <div class="left-event">
-                <h3>18</h3>
-                <span>March</span>
+    {{!------------ right-sidebar -------------}}
+        <div class="right-sidebar right-mid-left col-sm-4">
+            
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href="#">See All</a>
             </div>
-            <div class="rightt-event">
-                <h4>Social Media</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
-                <a href="#">More Info</a>
-            </div>
-        </div>
-        <div class="event">
-            <div class="left-event">
-                <h3>22</h3>
-                <span>June</span>
-            </div>
-            <div class="rightt-event">
-                <h4>Mobile Marketing</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
-                <a href="#">More Info</a>
-            </div>
-        </div>
 
-        <div class="sidebar-title">
-            <h4>Advertisements</h4>
-            <a href="#">Close</a>
-        </div>
-        <img src="./images/study-group.jpg" class="sidebar-ads">
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+                <div class="rightt-event">
+                    <h4>Social Media</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>June</span>
+                </div>
+                <div class="rightt-event">
+                    <h4>Mobile Marketing</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Wilson Tech Park </p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
 
-        <div class="sidebar-title">
-            <h4>Conversations</h4>
-            <a href="#">Hide Chat</a>
-        </div>
+            <div class="sidebar-title">
+                <h4>Advertisements</h4>
+                <a href="#">Close</a>
+            </div>
+            <img src="./images/study-group.jpg" class="sidebar-ads">
 
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+            <div class="sidebar-title">
+                <h4>Conversations</h4>
+                <a href="#">Hide Chat</a>
             </div>
-            <p>Alison Mina</p>
-        </div>
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Alison Mina</p>
             </div>
-            <p>Jackson Aston</p>
-        </div>
-        <div class="online-list">
-            <div class="online">
-                <img src="./images/profile pic 1.jpeg" alt="">
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Jackson Aston</p>
             </div>
-            <p>Samona Rose</p>
+            <div class="online-list">
+                <div class="online">
+                    <img src="./images/profile pic 1.jpeg" alt="">
+                </div>
+                <p>Samona Rose</p>
+            </div>
         </div>
     </div>
 </div>
@@ -214,9 +152,10 @@
         <p>Copyright 2021 - Eleven Eleven</p>
     </div>
 
-    <script src="./dashboard.js"></script>
+    {{!-- <script src="./dashboard.js"></script> --}}
 </body>
 
 <script src="/javascript/logout.js"></script>
+<script src="/javascript/dashboard.js"></script>
 
 </html>
