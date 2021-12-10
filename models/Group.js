@@ -2,7 +2,30 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // creat Group model
-class Group extends Model {}
+class Group extends Model {
+    static addmems(body, models) {
+        return models.Grouping.create({
+            user_id: body.user_id,
+            group_id: body.group_id
+        }).then(() => {
+            return Group.findOne({
+                where: {
+                    id: body.group_id
+                },
+                attributes: [
+                    'id',
+                    'post_url',
+                    'title',
+                    'created_at',
+                    [
+                        sequelize.literal('(SELECT * FROM grouping WHERE group.id = grouping.group_id)'),
+                        'group_members'
+                    ]
+                ]
+            });
+        });
+    }
+}
 
 Group.init(
     {

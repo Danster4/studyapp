@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Group } = require('../../models');
+const { Group, User, Grouping, Post } = require('../../models');
 
 router.get('/', (req, res) => {
     Group.findAll({
@@ -91,6 +91,17 @@ router.post('/', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+router.put('/addmems', (req, res) => {
+    if (req.session) {
+        Group.addmems({ ...req.body, user_id: req.session.user_id }, {Grouping, User })
+        .then(updatedMemberData => res.json(updatedMemberData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }
 });
 
 router.put('/:id', (req, res) => {
