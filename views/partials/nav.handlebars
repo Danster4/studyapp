@@ -14,9 +14,9 @@
           <i class="fas fa-search" aria-hidden="true"></i>
           <input type="text" placeholder="Search">
       </div>
-      <button type="submit" id="logout" class="btn">Logout</button>
+
       <div class="nav-user-icon online">
-          <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="/">
+          <img src="https://i.postimg.cc/wMtXDJZv/profile-pic-1.jpg" alt="/" id="nav-icon-pic">
       </div>
         {{!------------ Settings Menu -------------}}
         <div class="settings-menu">
@@ -51,7 +51,8 @@
                 </div>
                 <div class="settings-links">
                     <img src="./images/logout.png" class="settings-icon">
-                        <a href="#">Logout<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                        <a href="#" id="logout">Logout<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                        {{!-- <button type="submit" id="logout" class="btn">Logout</button> --}}
                 </div>
             </div>
             <br />
@@ -62,4 +63,3 @@
   </nav>
 
 
-  <script src="../../public/javascript/logout.js"></script>

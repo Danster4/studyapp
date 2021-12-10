@@ -203,12 +203,6 @@ nav {
   right: 0;
 }
 
-#logout {
-  text-decoration: none;
-  color: white;
-  background-color: purple;
-}
-
 .imp-links a, .group-links a {
   text-decoration: none;
   display: flex;
