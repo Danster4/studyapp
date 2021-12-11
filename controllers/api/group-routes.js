@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Group.create({
         group_name: req.body.group_name,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbGroupData => res.json(dbGroupData))
         .catch(err => {
