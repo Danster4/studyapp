@@ -1,9 +1,7 @@
 async function newGroupHandler(event) {
     event.preventDefault();
-    console.log('Did this work?');
 
     const group_name = document.querySelector('input[name=group_name]').value;
-    // const user_id = 
 
     const response = await fetch('/api/groups', {
         method: 'POST',
