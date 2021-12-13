@@ -23,22 +23,38 @@
             <div class="container">
                 <div class="row">
                     {{#each groups as |group|}}
-                    <div class="right-mid-left col-sm-6">
-                        <h3>{{group_name}}</h3>
-                        <h6>{{user.username}}</h6>
+                    <div class="right-mid-left col-sm-6 individualGroups">
+                        <a href="/group/{{group.id}}" class="individualGroups">
+                            <h3 class="individualGroups">{{group_name}}</h3>
+                            <h6 class="individualGroups">{{user.username}}</h6>
+                        </a>
                     </div>
                     {{/each}}
                 </div>
             </div>
         </div>
         {{!-- right side  --}}
-        <div class="col-sm-1 right-mid-left">
-            <h4>Online</h4>
-            <ol>
+        <div class="group-links right-mid-left">
+                <h3>Create a New Group</h3>
+                <p>Group Name:</p>
+                <div class="search-box2">
+                    <input type="text" placeholder="Enter Group Name Here" name="group_name" />
+                </div>
+                <button type="submit" id="subButton">
+                    Create
+                </button>
+            </div>
+        {{!-- <div class="col-sm-1 right-mid-left"> --}}
+            {{!-- <h4>Online</h4>
+            <ol> --}}
                 {{!-- {{#each users as |user|}} --}}
                 {{!-- <li>{{user.username}}</li> --}}
                 {{!-- {{/each}} --}}
-            </ol>
-        </div>
+            {{!-- </ol> --}}
+        {{!-- </div> --}}
     </div>
 </div>
+
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/dashboard.js"></script>
+<script src="/javascript/creategroup.js"></script>
