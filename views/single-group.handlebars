@@ -22,19 +22,29 @@
                 <div class="user-profile">
                     <img src="images/profilepic2.jpg">
                     <div>
-                        <p>John Nicholson</p>
+                        <p>{{user.username}}</p>
                         <small> Public <i class="fas fa-caret-down"></i></small>
                     </div>
                 </div>
 
-                <div class="post-input-container">
+                {{!-- <div class="post-input-container">
                     <textarea rows="3" placeholder="What's on your mind?">
                     </textarea>
                     <div class="post-links">
                         <a href="#"><i class="fas fa-video"></i>Video</a>
                         <a href="#"><i class="fas fa-image"></i>Photo</a>
                     </div>
+                </div> --}}
+
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="What would you like to share?"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><i class="fas fa-video fa-lg"></i>Video</a>
+                        <a href="#"><i class="fas fa-image fa-lg"></i>Photo</a>
+                        <button class="postBtn p-1" type="submit">Post</button>
+                    </div>
                 </div>
+
             </div>
 
             <ol>
@@ -71,3 +81,6 @@
         </div>
     </div>
 </div>
+
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/dashboard.js"></script>

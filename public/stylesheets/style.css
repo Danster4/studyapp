@@ -52,6 +52,12 @@ body {
   border-color: black;
 }
 
+.postBtn {
+  background-color: purple;
+  border-color: black;
+  color: white;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
