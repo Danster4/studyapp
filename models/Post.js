@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 // create Post model
 class Post extends Model {}
 
+// for now, post_title is allowNull:true
+
 Post.init(
     {
         id: {
@@ -14,7 +16,7 @@ Post.init(
         },
         post_title: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [1]
             }
