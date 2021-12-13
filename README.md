@@ -2,7 +2,7 @@
 
 ## Description
 Project 2: 
-A web application that combines education and socializing to help coders and web developers learn together. This application uses MySQL, MySQL2, Sequelize, Express.js, Handlebars, bcrypt, and dotenv.
+A web application that combines education and socializing to help coders and web developers learn together. This application uses MySQL, MySQL2, Sequelize, Express.js, Handlebars, bcrypt, dotenv, and Pixlr as our new technology to create our logo.
 
 ## Table of Contents
 * [Installation](#installation)
